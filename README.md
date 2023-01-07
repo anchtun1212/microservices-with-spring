@@ -21,7 +21,7 @@
 | "mvn spring-boot:build-image -Dmaven.test.skip=true" | To generate a docker image using Buildpacks. No need of Dockerfile |
 
 
-## Docker Commands used in the course
+## Some Docker Commands
 
 |     Docker Command       |     Description          |
 | ------------- | ------------- |
