@@ -33,3 +33,15 @@
 | "docker image rm image-id" | To remove one or more images for a given image ids |
 | "docker ps" | To show all running containers |
 | "docker ps -a" | To show all containers including running and stopped |
+| "docker container start container-id" | To start one or more stopped containers |
+| "docker container pause container-id" | To pause all processes within one or more containers |
+| "docker container unpause container-id" | To unpause all processes within one or more containers |
+| "docker container stop container-id" | To stop one or more running containers |
+| "docker container kill container-id" | To kill one or more running containers instantly |
+| "docker container restart container-id" | To restart one or more containers |
+| "docker container inspect container-id" | To inspect all the details for a given container id |
+| "docker container rm container-id" | To remove one or more containers based on container ids |
+| "docker container logs container-id" | To fetch the logs of a given container id |
+| "docker container logs -f container-id" | To follow log output of a given container id |
+| "docker logs container-id" | To fetch the logs of a given container id |
+| "docker logs -f container-id" | To follow log output of a given container id |
