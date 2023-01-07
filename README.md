@@ -10,6 +10,8 @@
 # Important Links
 - Docker - https://www.docker.com
 - DockerHub - https://hub.docker.com/u/anchtun1212
+- Cloud Native Buildpacks - https://buildpacks.io/
+- Paketo Buildpacks - https://paketo.io/
 
 ## Some Maven Commands
 
