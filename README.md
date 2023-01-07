@@ -26,7 +26,8 @@
 |     Docker Command       |     Description          |
 | ------------- | ------------- |
 | "docker build . -t anchtun/account" | To generate a docker image based on a Dockerfile |
-| "docker run  -p 8081:8080 anchtun/account" | To start a docker container based on a given image |
+| "docker run  -p 8010:8010 anchtun/account" | To start a docker container based on a given image |
+| "docker run  -p 8011:8010 anchtun/account" | To start another docker container based on a given image |
 | "docker images" | To list all the docker images present in the Docker server |
 | "docker image inspect image-id" | To display detailed image information for a given image id |
 | "docker image rm image-id" | To remove one or more images for a given image ids |
