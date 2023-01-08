@@ -4,6 +4,7 @@
 - To set up tables, columns, data needed inside the H2 database, create a `data.sql` file under `src\main\resources\` folder. Please note that these scripts will be executed everytime you start the microservice and the moment you stop/restart your service all your data present inside your H2 database will be lost. So please make sure not to use internal memory H2 database inside production applications.
 - To access the URLs of H2 databases and to make sure tables, columns, data are created inside them successfully. Please check `http://localhost:8080/h2-console` where 8080 is the runnig port of your microservice.
 - If you get error: `/var/run/docker.sock: connect: permission denied`, so try this command: `sudo setfacl --modify user:<user name or ID>:rw /var/run/docker.sock`
+- Add maven to environment variables: `export PATH=/opt/apache-maven-3.8.7/bin:$PATH`
 
 # Install Docker Desktop on debian
 - See this link: https://docs.docker.com/desktop/install/debian
