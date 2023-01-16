@@ -16,7 +16,8 @@ postgres=# alter database springdb owner to springuser;
 - To set up tables, columns, data needed inside the H2 database, create a `data.sql` file under `src\main\resources\` folder. Please note that these scripts will be executed everytime you start the microservice and the moment you stop/restart your service all your data present inside your H2 database will be lost. So please make sure not to use internal memory H2 database inside production applications.
 - To access the URLs of H2 databases and to make sure tables, columns, data are created inside them successfully. Please check `http://localhost:8080/h2-console` where 8080 is the runnig port of your microservice.
 - If you get error: `/var/run/docker.sock: connect: permission denied`, so try this command: `sudo setfacl --modify user:<user name or ID>:rw /var/run/docker.sock`
-- Add maven to environment variables: `export PATH=/opt/apache-maven-3.8.7/bin:$PATH`
+- Install Maven(`sudo apt install maven`) the path any version: Add maven to environment variables: `export PATH=/opt/apache-maven-3.8.7/bin:$PATH`
+  then you can use `sudo mvn ...`
 
 # Install Docker Desktop on debian
 - See this link: https://docs.docker.com/desktop/install/debian
@@ -60,4 +61,9 @@ postgres=# alter database springdb owner to springuser;
 | "docker container logs container-id" | To fetch the logs of a given container id |
 | "docker container logs -f container-id" | To follow log output of a given container id |
 | "docker logs container-id" | To fetch the logs of a given container id |
-| "docker logs -f container-id" | To follow log output of a given container id |
+| "docker login -u anchtun1212" | Log in to a Docker registry |
+| "docker logout" | Log out from a Docker registry |
+| "docker tag anchtun/account:latest anchtun1212/account" | An alias for an image |
+| "docker push anchtun1212/account" | To push an image or a repository to a registry after create tag |
+| "docker image push docker.io/anchtun/account" | To push an image or a repository to a registry |
+| "docker image pull docker.io/anchtun/accounts" | To pull an image or a repository from a registry |
