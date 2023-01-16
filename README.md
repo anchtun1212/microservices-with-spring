@@ -65,4 +65,6 @@ postgres=# alter database springdb owner to springuser;
 | "docker logout" | Log out from a Docker registry |
 | "docker tag anchtun/account:latest anchtun1212/account:latest" | An alias and tag for an image |
 | "docker push anchtun1212/account" | To push an image or a repository to a registry after create tag |
+| "docker image tag anchtun/account:latest docker.io/anchtun1212/account:latest" | An alias and tag for an image |
+| "docker image push docker.io/anchtun1212/account:latest" | To push an image or a repository to a registry after create tag |
 | "docker  pull anchtun1212/account" | To pull an image or a repository from a registry |
