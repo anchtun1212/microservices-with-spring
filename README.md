@@ -19,6 +19,9 @@ postgres=# alter database springdb owner to springuser;
 - Install Maven (`sudo apt install maven`) then patch any version: Add maven to environment variables: `export PATH=/opt/apache-maven-3.8.7/bin:$PATH`
   then you can use `sudo mvn ...`
 
+# Notes
+- anchtun/account: image name
+
 # Install Docker Desktop on debian
 - See this link: https://docs.docker.com/desktop/install/debian
 
