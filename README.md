@@ -72,3 +72,9 @@ postgres=# alter database springdb owner to springuser;
 | "docker image tag anchtun/account:latest docker.io/anchtun1212/account:latest" | An alias and tag for an image |
 | "docker image push docker.io/anchtun1212/account:latest" | To push an image or a repository to a registry after create tag |
 | "docker  pull anchtun1212/account" | To pull an image or a repository from a registry |
+| "docker container prune" | To remove all stopped containers |
+| "docker compose up" | To create and start containers based on given docker compose file |
+| "docker compose stop" | To stop services |
+
+
+
