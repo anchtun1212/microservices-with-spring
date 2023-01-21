@@ -33,6 +33,7 @@ postgres=# alter database springdb owner to springuser;
 - Paketo Buildpacks - https://paketo.io/
 - Reference documentation - https://docs.docker.com/reference/
 - Free sql DB online - https://www.freesqldatabase.com/
+- The Twelve Factors - https://12factor.net/
 
 ## Some Maven Commands
 
