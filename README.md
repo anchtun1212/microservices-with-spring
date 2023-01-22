@@ -35,6 +35,8 @@ postgres=# alter database springdb owner to springuser;
 - Free sql DB online - https://www.freesqldatabase.com/
 - The Twelve Factors - https://12factor.net/
 - Logstash - https://www.elastic.co/logstash/
+- Spring Cloud Project - https://spring.io/projects/spring-cloud
+- Spring Cloud Config - https://spring.io/projects/spring-cloud-config
 
 ## Some Maven Commands
 
