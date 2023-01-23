@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
 public class AccountController {
 	
 	private final AccountService accountService;
-	private final CommonMapperService commonMapper;
+	private final CommonMapperService commonMapperService;
 
 	@GetMapping("/myAccount")
 	public Account getAccountDetails(@RequestBody Customer customer) {
@@ -26,6 +26,6 @@ public class AccountController {
 	
 	@GetMapping("/account/properties")
 	public String getPropertyDetails() throws JsonProcessingException {
-		return commonMapper.accountMapper();
+		return commonMapperService.accountMapper();
 	}
 }

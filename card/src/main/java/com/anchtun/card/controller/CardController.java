@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.anchtun.card.model.Card;
 import com.anchtun.card.model.Customer;
 import com.anchtun.card.service.CardService;
+import com.anchtun.card.service.mapper.CommonMapperService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import lombok.AllArgsConstructor;
 
@@ -17,10 +19,16 @@ import lombok.AllArgsConstructor;
 public class CardController {
 	
 	private final CardService cardService;
+	private final CommonMapperService commonMapperService;
 	
 	@GetMapping("/myCards")
 	public List<Card> getCardDetails(@RequestBody Customer customer) {
 		return cardService.getCardDetails(customer);
+	}
+	
+	@GetMapping("/card/properties")
+	public String getPropertyDetails() throws JsonProcessingException {
+		return commonMapperService.cardMapper();
 	}
 
 }
