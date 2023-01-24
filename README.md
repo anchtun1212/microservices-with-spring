@@ -58,6 +58,7 @@ postgres=# alter database springdb owner to springuser;
 | "docker images" | To list all the docker images present in the Docker server |
 | "docker image inspect image-id" | To display detailed image information for a given image id |
 | "docker image rm image-id" | To remove one or more images for a given image ids |
+| "docker image rmi -f image-id" | Untags and removes all images that match the specified ID |
 | "docker ps" | To show all running containers |
 | "docker ps -a" | To show all containers including running and stopped |
 | "docker container start container-id" | To start one or more stopped containers |
