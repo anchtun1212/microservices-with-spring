@@ -1,0 +1,72 @@
+version: "3.8"
+
+services:
+
+  configserver:
+    image: anchtun/configserver:latest
+    mem_limit: 700m
+    ports:
+      - "8071:8071"
+    networks:
+     - anchtun-network
+     
+  account:
+    image: anchtun/account:latest
+    mem_limit: 700m
+    ports:
+      - "8010:8010"
+      - "8011:8010"
+    networks:
+      - anchtun-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+    
+  loan:
+    image: anchtun/loan:latest
+    mem_limit: 700m
+    ports:
+      - "8030:8030"
+    networks:
+      - anchtun-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/      
+    
+  card:
+    image: anchtun/card:latest
+    mem_limit: 700m
+    ports:
+      - "8020:8020"
+    networks:
+      - anchtun-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/      
+    
+networks:
+  anchtun-network:
