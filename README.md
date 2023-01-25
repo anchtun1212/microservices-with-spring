@@ -18,7 +18,7 @@ postgres=# alter database springdb owner to springuser;
 - If you get error: `/var/run/docker.sock: connect: permission denied`, so try this command: `sudo setfacl --modify user:<user name or ID>:rw /var/run/docker.sock`
 - Install Maven (`sudo apt install maven`) then patch any version: Add maven to environment variables: `export PATH=/opt/apache-maven-3.8.7/bin:$PATH`
   then you can use `sudo mvn ...`
-- Use Env. variables in spring boot's appliaction properties: spring.property=${ENV_VARIABLE} then export the Env. variable into your server:
+- Use Env. variables in spring boot's appliaction properties: `spring.property=${ENV_VARIABLE}` then export the Env. variable into your server:
   `export ENV_VARIABLE=value`
 - You can set Env. variable when running docker: `docker run ... -e ENV_VARIABLE=value`
 - When you encryt values inside application properties file should prefix with: `{cipher}encrypted_value`
