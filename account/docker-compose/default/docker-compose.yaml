@@ -35,7 +35,27 @@ services:
     mem_limit: 700m
     ports:
       - "8010:8010"
-      #- "8011:8010"
+    networks:
+      - anchtun-network
+    depends_on:
+      - configserver
+      - eurekaserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      
+  account2:
+    image: anchtun/account:latest
+    mem_limit: 700m
+    ports:
+      - "8011:8010"
     networks:
       - anchtun-network
     depends_on:
