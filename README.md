@@ -57,6 +57,7 @@ postgres=# alter database springdb owner to springuser;
 - Logstash - https://www.elastic.co/logstash/
 - Spring Cloud Project - https://spring.io/projects/spring-cloud
 - Spring Cloud Config - https://spring.io/projects/spring-cloud-config
+- Spring Cloud Netflix - https://spring.io/projects/spring-cloud-netflix
 
 ## Some Maven Commands
 
