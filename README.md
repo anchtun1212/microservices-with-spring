@@ -23,6 +23,22 @@ postgres=# alter database springdb owner to springuser;
 - You can set Env. variable when running docker: `docker run ... -e ENV_VARIABLE=value`
 - When you encryt values inside application properties file should prefix with: `{cipher}encrypted_value`
 
+# Use SSH `microservices-config` URL
+- Execute: `cd /home/mohammedayman/.ssh`
+- Execute: `ssh-keygen -m PEM -t rsa -b 4096`
+- Execute: `ls`
+- You will see: `id_rsa` and `id_rsa.pub`
+- Execute: `cat id_rsa.pub`
+- Copy the value from the Begin until `==`
+- Go to private repository (`microservices-config`)
+- Go to `settings`
+- Go `Deploy keys`
+- Click on `Add deploy Key`
+- Go to Config server and add those properties:
+ -- `spring.cloud.config.server.git.uri=git@github.com:anchtun1212/microservices-config.git` ==> this the SSH URL
+ -- `spring.cloud.config.server.git.ignore-local-ssh-settings=true`
+ -- `spring.cloud.config.server.git.private-key=\` ==> then copy the value inside `id_rsa` and `add at the end of each line \n\`
+
 # Notes
 - anchtun/account: image name
 
