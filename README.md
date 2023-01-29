@@ -35,9 +35,9 @@ postgres=# alter database springdb owner to springuser;
 - Go `Deploy keys`
 - Click on `Add deploy Key`
 - Go to Config server and add those properties:
- -- `spring.cloud.config.server.git.uri=git@github.com:anchtun1212/microservices-config.git` ==> this the SSH URL
- -- `spring.cloud.config.server.git.ignore-local-ssh-settings=true`
- -- `spring.cloud.config.server.git.private-key=\` ==> then copy the value inside `id_rsa` and `add at the end of each line \n\`
+ --- `spring.cloud.config.server.git.uri=git@github.com:anchtun1212/microservices-config.git` ==> this the SSH URL
+ --- `spring.cloud.config.server.git.ignore-local-ssh-settings=true`
+ --- `spring.cloud.config.server.git.private-key=\` ==> then copy the value inside `id_rsa` and `add at the end of each line \n\`
 
 # Notes
 - anchtun/account: image name
