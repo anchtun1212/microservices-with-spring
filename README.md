@@ -33,7 +33,7 @@ postgres=# alter database springdb owner to springuser;
 - Go to private repository (`microservices-config`)
 - Go to `settings`
 - Go `Deploy keys`
-- Click on `Add deploy Key`
+- Click on `Add deploy Key` and paste the `id_rsa.pub` value
 - Go to Config server and add those properties:
  * `spring.cloud.config.server.git.uri=git@github.com:anchtun1212/microservices-config.git` ==> this the SSH URL
  * `spring.cloud.config.server.git.ignore-local-ssh-settings=true`
