@@ -12,6 +12,7 @@ import com.anchtun.account.service.AccountService;
 import com.anchtun.account.service.mapper.CommonMapperService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.AllArgsConstructor;
 
@@ -41,5 +42,15 @@ public class AccountController {
 	
 	private CustomerDetails myCustomerDetailsFallback(Customer customer, Throwable t) {
 		return accountService.myCustomerDetailsFallback(customer, t);
+	}
+	
+	@GetMapping("/sayHello")
+	@RateLimiter(name = "sayHello", fallbackMethod = "sayHelloFallback")
+	public String sayHello() {
+		return "Hello, Welcome to AnchtunBank";
+	}
+
+	private String sayHelloFallback(Throwable t) {
+		return "Hi, Welcome to AnchtunBank";
 	}
 }
