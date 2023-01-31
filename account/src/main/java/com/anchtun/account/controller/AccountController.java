@@ -12,7 +12,7 @@ import com.anchtun.account.service.AccountService;
 import com.anchtun.account.service.mapper.CommonMapperService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -33,7 +33,8 @@ public class AccountController {
 	}
 	
 	@PostMapping("/myCustomerDetails")
-	@CircuitBreaker(name = "detailsForCustomerSupportApp", fallbackMethod = "myCustomerDetailsFallback")
+	//@CircuitBreaker(name = "detailsForCustomerSupportApp", fallbackMethod = "myCustomerDetailsFallback")
+	@Retry(name = "retryDetailsForCustomer", fallbackMethod = "myCustomerDetailsFallback")
 	public CustomerDetails myCustomerDetails(@RequestBody Customer customer) {
 		return accountService.myCustomerDetails(customer);
 	}
