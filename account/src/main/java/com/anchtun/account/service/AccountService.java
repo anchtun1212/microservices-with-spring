@@ -10,4 +10,6 @@ public interface AccountService {
 
 	CustomerDetails myCustomerDetails(Customer customer);
 
+	CustomerDetails myCustomerDetailsFallback(Customer customer, Throwable t);
+
 }

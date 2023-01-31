@@ -40,4 +40,23 @@ public class AccountServiceImpl implements AccountService {
 		return customerDetails;
 	}
 
+	@Override
+	public CustomerDetails myCustomerDetailsFallback(Customer customer, Throwable t) {
+		Account accounts = accountRepository.findByCustomerId(customer.getId());
+		List<Loan> loans = null;
+		List<Card> cards = null;
+		try {
+			loans = loanFeignClient.getLoanDetails(customer);
+		} catch (Exception e) {
+		}
+		try {
+			cards = cardFeignClient.getCardDetails(customer);
+		} catch (Exception e) {
+		}
+
+		CustomerDetails customerDetails = CustomerDetails.builder().accounts(accounts).loans(loans).cards(cards).build();
+
+		return customerDetails;
+	}
+
 }
