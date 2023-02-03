@@ -59,6 +59,7 @@ postgres=# alter database springdb owner to springuser;
 - Spring Cloud Config - https://spring.io/projects/spring-cloud-config
 - Spring Cloud Netflix - https://spring.io/projects/spring-cloud-netflix
 - Spring Cloud Gateway - https://spring.io/projects/spring-cloud-gateway
+- Spring Cloud Sleuth - https://spring.io/projects/spring-cloud-sleuth
 - Resilience4j - https://resilience4j.readme.io/docs/getting-started
 
 ## Some Maven Commands
