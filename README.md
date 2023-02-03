@@ -61,6 +61,11 @@ postgres=# alter database springdb owner to springuser;
 - Spring Cloud Gateway - https://spring.io/projects/spring-cloud-gateway
 - Spring Cloud Sleuth - https://spring.io/projects/spring-cloud-sleuth
 - Resilience4j - https://resilience4j.readme.io/docs/getting-started
+- Zipkin - https://zipkin.io/
+- RabbitMQ - https://www.rabbitmq.com/
+- Micrometer - https://micrometer.io/
+- Prometheus - https://prometheus.io/
+- Grafana - https://grafana.com/
 
 ## Some Maven Commands
 
