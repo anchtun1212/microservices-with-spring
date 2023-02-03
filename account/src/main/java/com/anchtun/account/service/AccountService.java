@@ -8,8 +8,8 @@ public interface AccountService {
 
 	Account getAccountDetails(Customer customer);
 
-	CustomerDetails myCustomerDetails(Customer customer);
+	CustomerDetails myCustomerDetails(String correlationId, Customer customer);
 
-	CustomerDetails myCustomerDetailsFallback(Customer customer, Throwable t);
+	CustomerDetails myCustomerDetailsFallback(String correlationId, Customer customer, Throwable t);
 
 }

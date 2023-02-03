@@ -30,10 +30,10 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public CustomerDetails myCustomerDetails(Customer customer) {
+	public CustomerDetails myCustomerDetails(String correlationId, Customer customer) {
 		Account accounts = accountRepository.findByCustomerId(customer.getId());
-		List<Loan> loans = loanFeignClient.getLoanDetails(customer);
-		List<Card> cards = cardFeignClient.getCardDetails(customer);
+		List<Loan> loans = loanFeignClient.getLoanDetails(correlationId, customer);
+		List<Card> cards = cardFeignClient.getCardDetails(correlationId, customer);
 
 		CustomerDetails customerDetails = CustomerDetails.builder().accounts(accounts).loans(loans).cards(cards).build();
 
@@ -41,16 +41,16 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public CustomerDetails myCustomerDetailsFallback(Customer customer, Throwable t) {
+	public CustomerDetails myCustomerDetailsFallback(String correlationId, Customer customer, Throwable t) {
 		Account accounts = accountRepository.findByCustomerId(customer.getId());
 		List<Loan> loans = null;
 		List<Card> cards = null;
 		try {
-			loans = loanFeignClient.getLoanDetails(customer);
+			loans = loanFeignClient.getLoanDetails(correlationId, customer);
 		} catch (Exception e) {
 		}
 		try {
-			cards = cardFeignClient.getCardDetails(customer);
+			cards = cardFeignClient.getCardDetails(correlationId, customer);
 		} catch (Exception e) {
 		}
 

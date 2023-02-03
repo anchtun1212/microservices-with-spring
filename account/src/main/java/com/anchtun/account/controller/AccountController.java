@@ -3,6 +3,7 @@ package com.anchtun.account.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.anchtun.account.model.Account;
@@ -15,6 +16,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.AllArgsConstructor;
+import static com.anchtun.account.constants.Constants.CORRELATION_ID;
 
 @AllArgsConstructor
 @RestController
@@ -36,12 +38,12 @@ public class AccountController {
 	@PostMapping("/myCustomerDetails")
 	//@CircuitBreaker(name = "detailsForCustomerSupportApp", fallbackMethod = "myCustomerDetailsFallback")
 	@Retry(name = "retryDetailsForCustomer", fallbackMethod = "myCustomerDetailsFallback")
-	public CustomerDetails myCustomerDetails(@RequestBody Customer customer) {
-		return accountService.myCustomerDetails(customer);
+	public CustomerDetails myCustomerDetails(@RequestHeader(CORRELATION_ID) String correlationId, @RequestBody Customer customer) {
+		return accountService.myCustomerDetails(correlationId, customer);
 	}
 	
-	private CustomerDetails myCustomerDetailsFallback(Customer customer, Throwable t) {
-		return accountService.myCustomerDetailsFallback(customer, t);
+	private CustomerDetails myCustomerDetailsFallback(@RequestHeader(CORRELATION_ID) String correlationId, Customer customer, Throwable t) {
+		return accountService.myCustomerDetailsFallback(correlationId, customer, t);
 	}
 	
 	@GetMapping("/sayHello")
