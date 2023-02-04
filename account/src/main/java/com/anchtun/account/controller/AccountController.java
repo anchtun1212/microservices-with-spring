@@ -1,5 +1,7 @@
 package com.anchtun.account.controller;
 
+import static com.anchtun.account.constants.Constants.CORRELATION_ID;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +18,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.AllArgsConstructor;
-import static com.anchtun.account.constants.Constants.CORRELATION_ID;
 
 @AllArgsConstructor
 @RestController

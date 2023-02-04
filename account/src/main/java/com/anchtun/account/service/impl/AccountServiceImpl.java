@@ -15,9 +15,11 @@ import com.anchtun.account.repository.AccountRepository;
 import com.anchtun.account.service.AccountService;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @AllArgsConstructor
 @Service
+@Slf4j
 public class AccountServiceImpl implements AccountService {
 
 	private final AccountRepository accountRepository;
@@ -31,12 +33,13 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public CustomerDetails myCustomerDetails(String correlationId, Customer customer) {
+		log.info("myCustomerDetails Start");
 		Account accounts = accountRepository.findByCustomerId(customer.getId());
 		List<Loan> loans = loanFeignClient.getLoanDetails(correlationId, customer);
 		List<Card> cards = cardFeignClient.getCardDetails(correlationId, customer);
 
 		CustomerDetails customerDetails = CustomerDetails.builder().accounts(accounts).loans(loans).cards(cards).build();
-
+		log.info("myCustomerDetails End");
 		return customerDetails;
 	}
 
