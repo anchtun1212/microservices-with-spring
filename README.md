@@ -22,6 +22,7 @@ postgres=# alter database springdb owner to springuser;
   `export ENV_VARIABLE=value`
 - You can set Env. variable when running docker: `docker run ... -e ENV_VARIABLE=value`
 - When you encryt values inside application properties file should prefix with: `{cipher}encrypted_value`
+- To run Zipkin server run this command: `sudo docker run -d -p 9411:9411 openzipkin/zipkin`
 
 # Use SSH `microservices-config` URL
 - Execute: `cd /home/mohammedayman/.ssh`
