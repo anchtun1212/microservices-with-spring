@@ -2,6 +2,15 @@ version: "3.8"
 
 services:
 
+  prometheus:
+   image: prom/prometheus:latest
+   ports:
+      - "9090:9090"
+   volumes:
+    - ./prometheus.yml:/etc/prometheus/prometheus.yml
+   networks:
+    - anchtun-network
+    
   zipkin:
     image: openzipkin/zipkin
     mem_limit: 700m

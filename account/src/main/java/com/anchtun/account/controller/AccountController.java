@@ -17,6 +17,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
+import io.micrometer.core.annotation.Timed;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -27,6 +28,7 @@ public class AccountController {
 	private final CommonMapperService commonMapperService;
 
 	@PostMapping("/myAccount")
+	@Timed(value = "getAccountDetails.time", description = "Time taken to return Account Details")
 	public Account getAccountDetails(@RequestBody Customer customer) {
 		return accountService.getAccountDetails(customer);
 	}
