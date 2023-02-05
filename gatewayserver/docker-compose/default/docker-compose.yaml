@@ -2,6 +2,14 @@ version: "3.8"
 
 services:
 
+  zipkin:
+    image: openzipkin/zipkin
+    mem_limit: 700m
+    ports:
+      - "9411:9411"
+    networks:
+     - anchtun-network
+     
   configserver:
     image: anchtun/configserver:latest
     mem_limit: 700m
@@ -9,6 +17,11 @@ services:
       - "8071:8071"
     networks:
      - anchtun-network
+    depends_on:
+     - zipkin
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin:9411/api/v2/spans
      
   eurekaserver:
     image: anchtun/eurekaserver:latest
@@ -28,7 +41,8 @@ services:
 # Env. Variables
     environment:
       SPRING_PROFILES_ACTIVE: default
-      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/ 
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin:9411/api/v2/spans
        
   account:
     image: anchtun/account:latest
@@ -50,27 +64,29 @@ services:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin:9411/api/v2/spans
       
-  account2:
-    image: anchtun/account:latest
-    mem_limit: 700m
-    ports:
-      - "8011:8010"
-    networks:
-      - anchtun-network
-    depends_on:
-      - configserver
-      - eurekaserver
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 30s
-        max_attempts: 3
-        window: 120s
-    environment:
-      SPRING_PROFILES_ACTIVE: default
-      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+#  account2:
+#    image: anchtun/account:latest
+#    mem_limit: 700m
+#    ports:
+#      - "8011:8010"
+#    networks:
+#      - anchtun-network
+#    depends_on:
+#      - configserver
+#      - eurekaserver
+#    deploy:
+#      restart_policy:
+#        condition: on-failure
+#        delay: 30s
+#        max_attempts: 3
+#        window: 120s
+#    environment:
+#      SPRING_PROFILES_ACTIVE: default
+#      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+#      MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin:9411/api/v2/spans
     
   loan:
     image: anchtun/loan:latest
@@ -92,6 +108,7 @@ services:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin:9411/api/v2/spans
     
   card:
     image: anchtun/card:latest
@@ -113,6 +130,7 @@ services:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin:9411/api/v2/spans
 
   gatewayserver:
     image: anchtun/gatewayserver:latest
@@ -132,11 +150,14 @@ services:
         condition: on-failure
         delay: 45s
         max_attempts: 3
-        window: 120s
+        window: 180s
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin:9411/api/v2/spans
     
 networks:
   anchtun-network:
+  
+  
