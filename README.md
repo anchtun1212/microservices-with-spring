@@ -68,6 +68,7 @@ postgres=# alter database springdb owner to springuser;
 - Micrometer - https://micrometer.io/
 - Prometheus - https://prometheus.io/
 - Grafana - https://grafana.com/
+- Grafana Dashboards - https://grafana.com/grafana/dashboards/
 
 ## Some Maven Commands
 
