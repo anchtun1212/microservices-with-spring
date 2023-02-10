@@ -24,6 +24,7 @@ postgres=# alter database springdb owner to springuser;
 - When you encryt values inside application properties file should prefix with: `{cipher}encrypted_value`
 - To run Zipkin server run this command: `sudo docker run -d -p 9411:9411 openzipkin/zipkin`
 - To setup a Rabbit MQ server, run the docker command `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management`
+- You can Install Minikube on Ubuntu: https://phoenixnap.com/kb/install-minikube-on-ubuntu
 
 # Use SSH `microservices-config` URL
 - Execute: `cd /home/mohammedayman/.ssh`
