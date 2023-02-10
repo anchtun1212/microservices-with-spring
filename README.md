@@ -69,7 +69,6 @@ postgres=# alter database springdb owner to springuser;
 - Prometheus - https://prometheus.io/
 - Grafana - https://grafana.com/
 - Grafana Dashboards - https://grafana.com/grafana/dashboards/
-- How to Install Kubernetes Cluster on Ubuntu 22.04 - https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/
 
 ## Some Maven Commands
 
