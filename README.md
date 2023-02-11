@@ -127,4 +127,5 @@ postgres=# alter database springdb owner to springuser;
 | "kubectl get nodes" | To get all the nodes details inside your cluster |
 | "kubectl get pods" | To get all the pods details inside your cluster |
 | "kubectl get deployments" | To get all the deployments details inside your cluster |
+| "kubectl get configmaps" | To get all the configmap details inside your cluster |
 
