@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: card-deployment
+  labels:
+    app: card
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: card
+  template:
+    metadata:
+      labels:
+        app: card
+    spec:
+      containers:
+      - name: card
+        image: anchtun/card:latest
+        ports:
+        - containerPort: 8020
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          valueFrom: 
+            configMapKeyRef:
+              name: anchtunbank-configmap
+              key: SPRING_PROFILES_ACTIVE
+        - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+          valueFrom: 
+            configMapKeyRef:
+              name: anchtunbank-configmap
+              key: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+        - name: SPRING_CONFIG_IMPORT
+          valueFrom: 
+            configMapKeyRef:
+              name: anchtunbank-configmap
+              key: SPRING_CONFIG_IMPORT
+        - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+          valueFrom: 
+            configMapKeyRef:
+              name: anchtunbank-configmap
+              key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: card-service
+spec:
+  selector:
+    app: card
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8020
+      targetPort: 8020
+      
