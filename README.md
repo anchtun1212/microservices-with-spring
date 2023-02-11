@@ -70,6 +70,8 @@ postgres=# alter database springdb owner to springuser;
 - Prometheus - https://prometheus.io/
 - Grafana - https://grafana.com/
 - Grafana Dashboards - https://grafana.com/grafana/dashboards/
+- Google Cloud platform (Free Tier Products) - https://cloud.google.com/free/
+- Google Cloud platform (SDK) - https://cloud.google.com/sdk
 
 ## Some Maven Commands
 
