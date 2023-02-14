@@ -123,6 +123,7 @@ postgres=# alter database springdb owner to springuser;
 
 |     Kubernetes Command       |     Description          |
 | ------------- | ------------- |
+| "kubectl apply -f filename" | To create a deployment/service/configmap based on a given YAML file |
 | "kubectl get all" | To get all the components inside your cluster |
 | "kubectl get nodes" | To get all the nodes details inside your cluster |
 | "kubectl get pods" | To get all the pods details inside your cluster |
