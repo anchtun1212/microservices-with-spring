@@ -142,4 +142,8 @@ postgres=# alter database springdb owner to springuser;
 | "kubectl get configmap configmap-id" | To get the details of a given configmap |
 | "kubectl get events --sort-by=.metadata.creationTimestamp" | To get all the events occured inside your cluster |
 | "kubectl scale deployment account-deployment --replicas=3" | To increase the number of replicas for a deployment inside your cluster |
-
+| "kubectl set image deployment account-deployment account=anchtun1212/account:k8s" | To set a new image for a deployment inside your cluster |
+| "kubectl rollout history deployment account-deployment" | To know the rollout history for a deployment inside your cluster |
+| "kubectl rollout undo deployment account-deployment --to-revision=1" | To rollback to a given revision for a deployment inside your cluster |
+| "kubectl autoscale deployment account-deployment --min=3 --max=10 --cpu-percent=70" | To create automatic scaling using HPA for a deployment inside your cluster |
+| "kubectl logs node-id" | To get a logs of a given node inside your cluster |
