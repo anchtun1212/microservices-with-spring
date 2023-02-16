@@ -145,5 +145,6 @@ postgres=# alter database springdb owner to springuser;
 | "kubectl set image deployment account-deployment account=anchtun1212/account:k8s" | To set a new image for a deployment inside your cluster |
 | "kubectl rollout history deployment account-deployment" | To know the rollout history for a deployment inside your cluster |
 | "kubectl rollout undo deployment account-deployment --to-revision=1" | To rollback to a given revision for a deployment inside your cluster |
+| "kubectl get hpa" | To show the current HPA (Horizontal Pod Autoscaling) inside your cluster |
 | "kubectl autoscale deployment account-deployment --min=3 --max=10 --cpu-percent=70" | To create automatic scaling using HPA for a deployment inside your cluster |
 | "kubectl logs node-id" | To get a logs of a given node inside your cluster |
