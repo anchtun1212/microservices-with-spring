@@ -124,6 +124,7 @@ postgres=# alter database springdb owner to springuser;
 |     Kubernetes Command       |     Description          |
 | ------------- | ------------- |
 | "kubectl apply -f filename" | To create a deployment/service/configmap based on a given YAML file |
+| "kubectl delete 8_gateway.yml" | To uninstall the microservice gateway|
 | "kubectl get all" | To get all the components inside your cluster |
 | "kubectl get pods" | To get all the pods details inside your cluster |
 | "kubectl get pod pod-id" | To get the details of a given pod id |
