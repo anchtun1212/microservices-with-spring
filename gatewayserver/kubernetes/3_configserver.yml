@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: configserver
-        image: anchtun/configserver:latest
+        image: anchtun1212/configserver
         ports:
         - containerPort: 8071
         env:
@@ -43,3 +43,4 @@ spec:
     - protocol: TCP
       port: 8071
       targetPort: 8071
+      

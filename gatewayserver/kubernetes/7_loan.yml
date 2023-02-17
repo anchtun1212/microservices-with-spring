@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: loan
-        image: anchtun/loan:latest
+        image: anchtun1212/loan:latest
         ports:
         - containerPort: 8030
         env:
