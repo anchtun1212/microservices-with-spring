@@ -73,6 +73,7 @@ postgres=# alter database springdb owner to springuser;
 - Grafana Dashboards - https://grafana.com/grafana/dashboards/
 - Google Cloud platform (Free Tier Products) - https://cloud.google.com/free/
 - Google Cloud platform (SDK) - https://cloud.google.com/sdk
+- Helm -  https://helm.sh/
 
 ## Some Maven Commands
 
