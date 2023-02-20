@@ -150,4 +150,3 @@ postgres=# alter database springdb owner to springuser;
 | "kubectl get hpa" | To show the current HPA (Horizontal Pod Autoscaling) inside your cluster |
 | "kubectl autoscale deployment account-deployment --min=3 --max=10 --cpu-percent=70" | To create automatic scaling using HPA for a deployment inside your cluster |
 | "kubectl logs node-id" | To get a logs of a given node inside your cluster |
-k
