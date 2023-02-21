@@ -150,3 +150,11 @@ postgres=# alter database springdb owner to springuser;
 | "kubectl get hpa" | To show the current HPA (Horizontal Pod Autoscaling) inside your cluster |
 | "kubectl autoscale deployment account-deployment --min=3 --max=10 --cpu-percent=70" | To create automatic scaling using HPA for a deployment inside your cluster |
 | "kubectl logs node-id" | To get a logs of a given node inside your cluster |
+
+## Some Helm Commands
+
+|     Helm Command       |     Description          |
+| ------------- | ------------- |
+| "helm install [NAME] [CHART]" | Install the given helm chart into K8s cluster |
+| "helm upgrade [NAME] [CHART]" | Upgrades a specified release to a new version of a chart |
+| "helm uninstall [NAME]" | Uninstall all of the resources associated with a given release |
