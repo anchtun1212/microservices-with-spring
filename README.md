@@ -166,3 +166,4 @@ postgres=# alter database springdb owner to springuser;
 | "helm history [NAME]" | Display historical revisions for a given release |
 | "helm rollback [NAME] [REVISION]" | Roll back a release to a previous revision |
 | "helm list" | Lists all of the helm releases inside a K8s cluster |
+| "helm ls" | Lists all of the helm releases inside a K8s cluster |
