@@ -1,0 +1,23 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deploymentName: loan-deployment
+deploymentLabel: loan
+
+replicaCount: 1
+
+image:
+  repository: anchtun1212/loan
+  tag: latest
+
+containerPort: 8030
+
+service:
+  type: LoadBalancer
+  port: 8030
+  targetPort: 8030
+
+config_enabled: true
+zipkin_enabled: true
+profile_enabled: true
+eureka_enabled: true
