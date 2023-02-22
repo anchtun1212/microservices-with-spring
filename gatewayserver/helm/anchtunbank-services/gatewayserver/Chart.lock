@@ -1,0 +1,6 @@
+dependencies:
+- name: anchtunbank-common
+  repository: file://../../anchtunbank-common
+  version: 0.1.0
+digest: sha256:fddb71c64efd87bd73235e078634c25c6af072436df37b47625f8640c14d4c3d
+generated: "2023-02-22T09:32:34.221821417+03:00"
