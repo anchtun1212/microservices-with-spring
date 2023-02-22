@@ -158,3 +158,6 @@ postgres=# alter database springdb owner to springuser;
 | "helm install [NAME] [CHART]" | Install the given helm chart into K8s cluster |
 | "helm upgrade [NAME] [CHART]" | Upgrades a specified release to a new version of a chart |
 | "helm uninstall [NAME]" | Uninstall all of the resources associated with a given release |
+| "helm create [NAME]" | Create a default chart with the given name |
+| "helm dependency build" | To compile the given helm chart |
+| "helm dependencies build" | To recompile the given helm chart |
