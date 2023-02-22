@@ -24,4 +24,4 @@ dependencies:
   repository: file://../../anchtunbank-services/gatewayserver
   version: 0.1.0
 digest: sha256:a24e6bc4537dfe2091921668fdaa9698015f6c43ed8302f7188f5c0ba20917d8
-generated: "2023-02-22T10:11:24.973103646+03:00"
+generated: "2023-02-22T20:35:11.038178754+03:00"

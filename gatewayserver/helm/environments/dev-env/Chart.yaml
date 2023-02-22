@@ -43,7 +43,7 @@ dependencies:
   - name: account
     version: 0.1.0
     repository: file://../../anchtunbank-services/account
-    
+ 
   - name: card
     version: 0.1.0
     repository: file://../../anchtunbank-services/card

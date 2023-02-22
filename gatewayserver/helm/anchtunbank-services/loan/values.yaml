@@ -13,7 +13,7 @@ image:
 containerPort: 8030
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   port: 8030
   targetPort: 8030
 
