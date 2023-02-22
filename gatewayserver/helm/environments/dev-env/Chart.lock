@@ -1,0 +1,27 @@
+dependencies:
+- name: anchtunbank-common
+  repository: file://../../anchtunbank-common
+  version: 0.1.0
+- name: zipkin
+  repository: file://../../anchtunbank-services/zipkin
+  version: 0.1.0
+- name: configserver
+  repository: file://../../anchtunbank-services/configserver
+  version: 0.1.0
+- name: eurekaserver
+  repository: file://../../anchtunbank-services/eurekaserver
+  version: 0.1.0
+- name: account
+  repository: file://../../anchtunbank-services/account
+  version: 0.1.0
+- name: card
+  repository: file://../../anchtunbank-services/card
+  version: 0.1.0
+- name: loan
+  repository: file://../../anchtunbank-services/loan
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../anchtunbank-services/gatewayserver
+  version: 0.1.0
+digest: sha256:a24e6bc4537dfe2091921668fdaa9698015f6c43ed8302f7188f5c0ba20917d8
+generated: "2023-02-22T10:11:24.973103646+03:00"
