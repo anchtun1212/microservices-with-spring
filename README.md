@@ -26,6 +26,7 @@ postgres=# alter database springdb owner to springuser;
 - To setup a Rabbit MQ server, run the docker command `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management`
 - You can Install Minikube on Ubuntu: https://phoenixnap.com/kb/install-minikube-on-ubuntu
 - In order to connect to your cluster in GCP you need to install: `Google Cloud SDK` so please flow this: https://techviewleo.com/install-google-cloud-sdk-on-linux-mint-ubuntu/  then run this command: `sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin` and finally go to cluster and get the command line from `connect` button and run it; it should be like this: `gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project microservices-377510`
+- In order to install keycloak locally using `docker` open this link: https://www.keycloak.org/getting-started/getting-started-docker
 
 # Use SSH `microservices-config` URL
 - Execute: `cd /home/mohammedayman/.ssh`
