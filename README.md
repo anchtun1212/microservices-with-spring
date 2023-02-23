@@ -71,9 +71,12 @@ postgres=# alter database springdb owner to springuser;
 - Prometheus - https://prometheus.io/
 - Grafana - https://grafana.com/
 - Grafana Dashboards - https://grafana.com/grafana/dashboards/
-- Google Cloud platform (Free Tier Products) - https://cloud.google.com/free/
-- Google Cloud platform (SDK) - https://cloud.google.com/sdk
+- Google Cloud platform (GCP) (Free Tier Products) - https://cloud.google.com/free/
+- GCP - https://console.cloud.google.com/
+- GConsole -  https://cloud.google.com/sdk
 - Helm -  https://helm.sh/
+- Keycloak  -  https://www.keycloak.org/
+- Istio -  https://istio.io/
 
 ## Some Maven Commands
 
