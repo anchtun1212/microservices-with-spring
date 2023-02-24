@@ -30,6 +30,7 @@ postgres=# alter database springdb owner to springuser;
 - To install keycloak helm chart go to this link and follow installation instructions: https://bitnami.com/stack/keycloak/helm
 - When you install keycloak inside K8s the username is: `user` and to get the password: see next line.  
 - To get Keycloak's password installed inside K8s, run this command: `echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 --decode)`
+- To change keycloak's password run this command: `helm install my-release --set auth.adminPassword=secretpassword my-repo/keycloak`
 
 # Use SSH `microservices-config` URL
 - Execute: `cd /home/mohammedayman/.ssh`
