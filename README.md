@@ -31,6 +31,10 @@ postgres=# alter database springdb owner to springuser;
 - When you install keycloak inside K8s the username is: `user` and to get the password: see next line.  
 - To get Keycloak's password installed inside K8s, run this command: `echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 --decode)`
 - To change keycloak's password run this command: `helm install my-release --set auth.adminPassword=secretpassword my-repo/keycloak`
+- If you create new cluster and get error to run some commands, so run those commands:
+    `gcloud components install gke-gcloud-auth-plugin`
+    `export USE_GKE_GCLOUD_AUTH_PLUGIN=True`
+    `gcloud container clusters get-credentials <YOUR_CLUSTER> --region <YOUR_REGION>`
 
 # Use SSH `microservices-config` URL
 - Execute: `cd /home/mohammedayman/.ssh`
