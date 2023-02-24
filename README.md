@@ -27,7 +27,7 @@ postgres=# alter database springdb owner to springuser;
 - You can Install Minikube on Ubuntu: https://phoenixnap.com/kb/install-minikube-on-ubuntu
 - In order to connect to your cluster in GCP you need to install: `Google Cloud SDK` so please flow this: https://techviewleo.com/install-google-cloud-sdk-on-linux-mint-ubuntu/  then run this command: `sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin` and finally go to cluster and get the command line from `connect` button and run it; it should be like this: `gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project microservices-377510`
 - In order to install keycloak locally using `docker` open this link: https://www.keycloak.org/getting-started/getting-started-docker but change the port from `8080` to `7080`: `sudo docker run -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:21.0.0 start-dev`
-- To install keycloak helm chart go to this link and follow installation instructions: `https://bitnami.com/stack/keycloak/helm`
+- To install keycloak helm chart go to this link and follow installation instructions: https://bitnami.com/stack/keycloak/helm
 
 # Use SSH `microservices-config` URL
 - Execute: `cd /home/mohammedayman/.ssh`
