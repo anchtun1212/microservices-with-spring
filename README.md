@@ -78,6 +78,7 @@ postgres=# alter database springdb owner to springuser;
 - Helm -  https://helm.sh/
 - Keycloak  -  https://www.keycloak.org/
 - Istio -  https://istio.io/
+- Bitnami - https://bitnami.com/stacks
 
 ## Some Maven Commands
 
