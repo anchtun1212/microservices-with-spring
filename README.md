@@ -29,7 +29,7 @@ postgres=# alter database springdb owner to springuser;
 - In order to install keycloak locally using `docker` open this link: https://www.keycloak.org/getting-started/getting-started-docker but change the port from `8080` to `7080`: `sudo docker run -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:21.0.0 start-dev`
 - To install keycloak helm chart go to this link and follow installation instructions: https://bitnami.com/stack/keycloak/helm
 - When you install keycloak inside K8s the username is: `user` and to get the password: see next line.  
-- To get Keycloak password installed inside K8s, run this command: `echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 --decode)`
+- To get Keycloak's password installed inside K8s, run this command: `echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 --decode)`
 
 # Use SSH `microservices-config` URL
 - Execute: `cd /home/mohammedayman/.ssh`
