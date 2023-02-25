@@ -19,7 +19,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
-        http.authorizeExchange(exchanges -> exchanges.pathMatchers("/anchtunbank/account/**").authenticated()
+        http.authorizeExchange(exchanges -> exchanges.pathMatchers("/anchtunbank/account/**").hasRole("ACCOUNT")
                         .pathMatchers("/anchtunbank/card/**").authenticated()
                         .pathMatchers("/anchtunbank/loan/**").authenticated())
                 .oauth2ResourceServer().jwt().jwtAuthenticationConverter(grantedAuthoritiesExtractor());
@@ -27,12 +27,10 @@ public class SecurityConfig {
         return http.build();
     }
 
-    Converter<Jwt, Mono<AbstractAuthenticationToken>> grantedAuthoritiesExtractor() {
-        JwtAuthenticationConverter jwtAuthenticationConverter =
-                new JwtAuthenticationConverter();
-        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter
-                (new KeycloakRoleConverter());
-        return new ReactiveJwtAuthenticationConverterAdapter(jwtAuthenticationConverter);
-    }
+	Converter<Jwt, Mono<AbstractAuthenticationToken>> grantedAuthoritiesExtractor() {
+		JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
+		jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new KeycloakRoleConverter());
+		return new ReactiveJwtAuthenticationConverterAdapter(jwtAuthenticationConverter);
+	}
 
 }
