@@ -1,5 +1,7 @@
 package com.anchtun.account.feign;
 
+import static com.anchtun.account.constants.Constants.CORRELATION_ID;
+
 import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.anchtun.account.model.Card;
 import com.anchtun.account.model.Customer;
-import static com.anchtun.account.constants.Constants.CORRELATION_ID;
 
 @FeignClient("card")
 public interface CardFeignClient {
