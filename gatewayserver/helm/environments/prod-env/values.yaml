@@ -5,11 +5,11 @@ global:
   activeProfile: prod
   configServerURL: configserver:http://configserver:8071/
   eurekaServerURL: http://eurekaserver:8070/eureka/
-  keyCloakURL: http://keycloak:80/realms/master/protocol/openid-connect/certs
-  issueruri: http://keycloak:80/realms/master
-  tokenuri: http://keycloak:80/realms/master/protocol/openid-connect/token
-  authorizationuri: http://keycloak:80/realms/master/protocol/openid-connect/auth
-  userinfouri: http://keycloak:80/realms/master/protocol/openid-connect/userinfo
+  keyCloakURL: http://keycloak/realms/master/protocol/openid-connect/certs
+  issueruri: http://keycloak/realms/master
+  tokenuri: http://keycloak/realms/master/protocol/openid-connect/token
+  authorizationuri: http://keycloak/realms/master/protocol/openid-connect/auth
+  userinfouri: http://keycloak/realms/master/protocol/openid-connect/userinfo
   # secret
   secretName: anchtunbankprod-secret
   keycloakclientid: anchtunbank-gateway-ui
