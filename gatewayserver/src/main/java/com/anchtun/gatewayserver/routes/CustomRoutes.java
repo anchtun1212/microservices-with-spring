@@ -1,7 +1,5 @@
 package com.anchtun.gatewayserver.routes;
 
-import java.time.LocalDate;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.factory.TokenRelayGatewayFilterFactory;
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -24,6 +22,7 @@ public class CustomRoutes {
 	            			    .rewritePath("/anchtunbank/account/(?<segment>.*)","/${segment}")//replace the path: remove anchtunbank
 	            				//.addResponseHeader("X-Response-Time", LocalDate.now().toString()))
 	            			    .removeRequestHeader("Cookie"))
+	            // lb: LoadBalancer
 	            .uri("lb://ACCOUNT")).
 	        route(p -> p
 		            .path("/anchtunbank/loan/**")
