@@ -1,5 +1,7 @@
 package com.anchtun.loan.controller;
 
+import static com.anchtun.loan.constants.Constants.CORRELATION_ID;
+
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +17,6 @@ import com.anchtun.loan.service.mapper.CommonMapperService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import lombok.AllArgsConstructor;
-import static com.anchtun.loan.constants.Constants.CORRELATION_ID;
 
 @RestController
 @AllArgsConstructor

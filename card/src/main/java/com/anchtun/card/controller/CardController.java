@@ -1,5 +1,7 @@
 package com.anchtun.card.controller;
 
+import static com.anchtun.card.constants.Constants.CORRELATION_ID;
+
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +17,6 @@ import com.anchtun.card.service.mapper.CommonMapperService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import lombok.AllArgsConstructor;
-
-import static com.anchtun.card.constants.Constants.CORRELATION_ID;
 
 @AllArgsConstructor
 @RestController

@@ -2,6 +2,8 @@ package com.anchtun.account.controller;
 
 import static com.anchtun.account.constants.Constants.CORRELATION_ID;
 
+import java.util.Optional;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -52,7 +54,8 @@ public class AccountController {
 	@GetMapping("/sayHello")
 	@RateLimiter(name = "sayHello", fallbackMethod = "sayHelloFallback")
 	public String sayHello() {
-		return "Hello, Welcome to AnchtunBank";
+		Optional<String> podName = Optional.ofNullable(System.getenv("HOSTNAME"));
+		return "Hello, Welcome to AnchtunBank Kubernetes cluster from : " + (podName.isPresent() ? podName.get() : "");
 	}
 
 	private String sayHelloFallback(Throwable t) {
