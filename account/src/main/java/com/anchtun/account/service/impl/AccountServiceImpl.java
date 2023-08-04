@@ -2,17 +2,18 @@ package com.anchtun.account.service.impl;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Service;
 
 import com.anchtun.account.feign.CardFeignClient;
 import com.anchtun.account.feign.LoanFeignClient;
 import com.anchtun.account.model.Account;
-import com.anchtun.account.model.Card;
 import com.anchtun.account.model.Customer;
 import com.anchtun.account.model.CustomerDetails;
-import com.anchtun.account.model.Loan;
 import com.anchtun.account.repository.AccountRepository;
 import com.anchtun.account.service.AccountService;
+import com.anchtun.shared.dto.Card;
+import com.anchtun.shared.dto.Loan;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

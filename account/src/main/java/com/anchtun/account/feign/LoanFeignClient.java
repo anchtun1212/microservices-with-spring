@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.anchtun.account.model.Customer;
-import com.anchtun.account.model.Loan;
+import com.anchtun.shared.dto.Loan;
 
 @FeignClient("loan")
 public interface LoanFeignClient {

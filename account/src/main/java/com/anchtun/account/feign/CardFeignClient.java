@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-import com.anchtun.account.model.Card;
 import com.anchtun.account.model.Customer;
+import com.anchtun.shared.dto.Card;
 
 @FeignClient("card")
 public interface CardFeignClient {
