@@ -22,9 +22,7 @@
 		<dependency>
 			<groupId>com.anchtun</groupId>
 			<artifactId>shared</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../shared/target/shared-0.0.1-SNAPSHOT.jar</systemPath>
+			<version>1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
