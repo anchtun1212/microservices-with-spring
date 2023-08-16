@@ -35,6 +35,12 @@ postgres=# alter database springdb owner to springuser;
     `gcloud components install gke-gcloud-auth-plugin`
     `export USE_GKE_GCLOUD_AUTH_PLUGIN=True`
     `gcloud container clusters get-credentials <YOUR_CLUSTER> --region <YOUR_REGION>`
+    
+# shared jar
+- Please see my post (question + response): https://stackoverflow.com/questions/76846047/how-to-use-a-springboot-project-as-a-shared-library-in-microservice-project/76847561#76847561
+- Please see my post (response): https://stackoverflow.com/questions/32696080/how-to-use-spring-boot-making-a-common-library/76911478#76911478
+
+
 
 # Use SSH `microservices-config` URL
 - Execute: `cd /home/mohammedayman/.ssh`
