@@ -30,11 +30,12 @@ mvn install:install-file -Dfile=./target/shared-0.0.1-SNAPSHOT-origin.jar -Dgrou
 
 4- Go inside account project and add in pom.xml this dependency (change the groupId and the artifactId):
 
-<dependency>
-    <groupId>com.anchtun</groupId>
-    <artifactId>shared</artifactId>
-    <version>1.0</version>
-</dependency>
+          <dependency>
+               <groupId>com.anchtun</groupId>
+               <artifactId>shared</artifactId>
+               <version>1.0</version>
+           </dependency>
+
 
 5- You can use the jar now!
 
